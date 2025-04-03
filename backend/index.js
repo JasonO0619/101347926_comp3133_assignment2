@@ -23,11 +23,15 @@ const apolloServer = new ApolloServer({
     typeDefs: [TypeDefsUser, TypeDefEmployee],
     resolvers: [ResolversUser, ResolversEmployee]
 })
+const allowedOrigins = [
+    'https://101347926-comp3133-assignment2.vercel.app', 'http://localhost:4200', 
+  ];
 
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ['http://localhost:4200', 'https://101347926-comp3133-assignment2.vercel.app/'], // <-- add your Vercel frontend URL here
-    credentials: true // optional, if you're using cookies or sessions
+    origin: allowedOrigins,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true
   }));
 
 
