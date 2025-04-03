@@ -1,0 +1,51 @@
+<h1>Sign Up Here:</h1>
+
+<div class="page-wrapper">
+<div class="signup-container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+      
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName" type="text" placeholder="First Name" />
+        <div *ngIf="signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched" class="error-message">
+          First name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" formControlName="lastName" type="text" placeholder="Last Name" />
+        <div *ngIf="signupForm.get('lastName')?.invalid && signupForm.get('lastName')?.touched" class="error-message">
+          Last name is required.
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" placeholder="Email" />
+        <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error-message">
+          Enter a valid email.
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" placeholder="Password" />
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error-message">
+          Password is required.
+        </div>
+      </div>
+    
+      <button type="submit">Sign Up</button>
+  
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <div class="login-link">
+        <p>Already have an account?</p>
+        <button type="button" (click)="onLogin()" class="login-button">Log In</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+  

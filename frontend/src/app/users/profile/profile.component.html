@@ -1,0 +1,25 @@
+<div class="back-button" (click)="goBack()">
+    ← Back to Employees
+  </div>
+
+  <h1>My Profile</h1>
+
+  <div class="profile-container">
+    <h2>{{ user?.username }}</h2>
+  
+    <div class="profile-icon">
+      <i class="fa-solid fa-user-circle"></i>
+    </div>
+  
+    <p><strong>Email:</strong> {{ user?.email }}</p>
+    <p><strong>ID:</strong> {{ user?.id }}</p>
+  
+    <div class="logout-wrapper">
+      <button (click)="onLogout()" class="logout-button">Logout</button>
+    </div>
+  </div>
+  <ng-template #notFound>
+    <p class="error-message">{{ errorMessage }}</p>
+  </ng-template>
+  
+ 
