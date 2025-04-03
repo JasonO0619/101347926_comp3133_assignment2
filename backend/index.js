@@ -25,7 +25,10 @@ const apolloServer = new ApolloServer({
 })
 
 app.use(bodyParser.json());
-app.use('*', cors());
+app.use(cors({
+    origin: ['http://localhost:4200', 'https://101347926-comp3133-assignment2.vercel.app/'], // <-- add your Vercel frontend URL here
+    credentials: true // optional, if you're using cookies or sessions
+  }));
 
 
 const connectDB = async() => {
