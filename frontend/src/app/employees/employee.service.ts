@@ -6,7 +6,7 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root',
 })
 export class EmployeeService {
-  private GRAPHQL_API = 'http://localhost:8081/graphql'; 
+  private GRAPHQL_API = 'https://one01347926-comp3133-assignment2-backend.onrender.com/graphql'; 
 
   constructor(private http: HttpClient) {}
 
